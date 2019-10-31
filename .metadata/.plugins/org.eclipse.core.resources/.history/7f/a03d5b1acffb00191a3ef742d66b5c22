@@ -1,0 +1,11 @@
+package com.exemplo.service;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Service;
+
+import com.exemplo.DAO.TransportadoraDAO;
+
+@Service
+public interface TransportadoraService  extends  <TransportadoraDAO, Long>{
+	
+}

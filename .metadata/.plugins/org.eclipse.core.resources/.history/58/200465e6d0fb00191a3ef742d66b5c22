@@ -1,0 +1,21 @@
+package com.exemplo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.exemplo.model.Transportadora;
+import com.exemplo.service.TransportadoraService;
+
+@RestController
+public class TransportadoraController {
+	
+	@Autowired
+	private TransportadoraService bo; 
+	
+		
+	public void salvar(Transportadora transp) {
+		
+		bo.salvar(tranp);
+		
+	}
+}

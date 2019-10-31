@@ -1,0 +1,7 @@
+package com.exemplo.DAO.imp;
+
+import com.exemplo.DAO.TransportadoraDAO;
+
+public class TransportadoraDAOImp implements TransportadoraDAO{
+
+}
