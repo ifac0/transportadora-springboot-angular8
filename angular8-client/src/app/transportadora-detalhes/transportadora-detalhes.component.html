@@ -1,0 +1,18 @@
+<h2>Detalhes</h2> 
+
+<hr/>
+<div *ngIf="transportadora">
+  <div>
+    <label><b>Email: </b></label> {{transportadora.email}}
+  </div>
+  <div>
+    <label><b>Nome: </b></label> {{transportadora.nome}}
+  </div>
+  <div>
+    <label><b>Empresa: </b></label> {{transportadora.empresa}}
+  </div>  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Voltar para Lista</button><br>
