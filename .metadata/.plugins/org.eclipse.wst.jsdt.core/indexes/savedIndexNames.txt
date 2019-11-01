@@ -1,7 +1,0 @@
-INDEX VERSION 1.4+/home/ifac/Área de Trabalho/Projeto/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
-1448941577.index
-3488967945.index
-480272162.index
-1823544869.index
-1924484980.index
-2187919706.index

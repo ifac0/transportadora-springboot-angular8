@@ -1,7 +1,0 @@
-package com.exemplo.service.imp;
-
-import com.exemplo.DAO.TransportadoraDAO;
-
-public class TransportadoraDAOImp implements TransportadoraDAO{
-
-}
