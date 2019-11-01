@@ -1485,3 +1485,83 @@ java.util.concurrent.TimeoutException
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:46:54.186
 !MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.gyJpMgCi => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:48:27.495
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:48:27.495
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@57be0d93[org.springframework.tooling.boot.ls:1.12.0.201910232051(id=625)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:48:27.495
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:48:28.837
+!MESSAGE Boot LS startup time from start to initialized: 1341ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:48:28.922
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.VfAdbcfMisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:48:28.926
+!MESSAGE subscribing to classpath changes: sts4.classpath.VfAdbcfM isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:48:28.926
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:48:28.927
+!MESSAGE subsribers = {sts4.classpath.VfAdbcfM=Send Classpath Notifications(881)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:48:28.927
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:48:28.927
+!MESSAGE project api ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:48:28.927
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:48:28.927
+!MESSAGE Preparing classpath changed notification api
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:48:28.927
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.VfAdbcfM => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:48:28.927
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:48:28.929
+!MESSAGE classpath=97 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:48:28.930
+!MESSAGE buffering callback sts4.classpath.VfAdbcfM api false 97
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:48:28.930
+!MESSAGE executing callback sts4.classpath.VfAdbcfM 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:48:28.980
+!MESSAGE executing callback sts4.classpath.VfAdbcfM SUCCESS [done]
+
+!ENTRY org.eclipse.lsp4e 4 0 2019-10-31 22:11:28.688
+!MESSAGE 
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:385)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2022)
+	at org.springframework.tooling.boot.ls.jdt.LSPTextHover.getHoverInfo(LSPTextHover.java:109)
+	at org.springframework.tooling.boot.ls.jdt.SpringBootJavaHoverProvider.getHoverInfo2(SpringBootJavaHoverProvider.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:167)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.lsp4e 4 0 2019-10-31 22:32:10.212
+!MESSAGE 
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:385)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2022)
+	at org.springframework.tooling.boot.ls.jdt.LSPTextHover.getHoverInfo(LSPTextHover.java:109)
+	at org.springframework.tooling.boot.ls.jdt.SpringBootJavaHoverProvider.getHoverInfo2(SpringBootJavaHoverProvider.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:167)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)

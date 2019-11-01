@@ -1,0 +1,5 @@
+package com.springboot2.exception;
+
+public class ErrorDetails {
+
+}
