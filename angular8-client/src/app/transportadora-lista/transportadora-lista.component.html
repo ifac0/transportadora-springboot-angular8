@@ -1,0 +1,29 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Transportadora | </h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Email</th>
+            <th>Celular</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let transportadora of transportadoras | async">
+            <td>{{transportadora.name}}</td>
+            <td>{{transportadora.telefone}}</td>
+            <td>{{transportadora.email}}</td>
+            <td>{{transportadora.celular}}</td>
+            <td><button (click)="deleteTransportadora(transportadora.id)" class="btn btn-danger">Deletar</button>
+                <button (click)="transportadoraDetails(transportadora.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
