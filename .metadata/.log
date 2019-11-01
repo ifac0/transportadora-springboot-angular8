@@ -1398,3 +1398,78 @@ java.util.concurrent.TimeoutException
 
 !ENTRY org.eclipse.ui 2 2 2019-10-31 20:59:56.749
 !MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:01:45.346
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.OATksPsM
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:01:45.346
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.OATksPsM
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:01:45.346
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:01:45.346
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.OATksPsM => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:04:04.489
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:04:04.489
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@57be0d93[org.springframework.tooling.boot.ls:1.12.0.201910232051(id=625)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:04:04.489
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:04:05.469
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:04:05.469
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@57be0d93[org.springframework.tooling.boot.ls:1.12.0.201910232051(id=625)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:04:05.469
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:04:07.280
+!MESSAGE Boot LS startup time from start to initialized: 1809ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:04:07.328
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.gyJpMgCiisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:04:07.328
+!MESSAGE subscribing to classpath changes: sts4.classpath.gyJpMgCi isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:04:07.329
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:04:07.329
+!MESSAGE subsribers = {sts4.classpath.gyJpMgCi=Send Classpath Notifications(259)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:04:07.329
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:04:07.329
+!MESSAGE project api ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:04:07.329
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:04:07.329
+!MESSAGE Preparing classpath changed notification api
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:04:07.329
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.gyJpMgCi => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:04:07.329
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:04:07.331
+!MESSAGE classpath=97 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:04:07.332
+!MESSAGE buffering callback sts4.classpath.gyJpMgCi api false 97
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:04:07.332
+!MESSAGE executing callback sts4.classpath.gyJpMgCi 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-31 21:04:07.416
+!MESSAGE executing callback sts4.classpath.gyJpMgCi SUCCESS [done]
