@@ -7,7 +7,7 @@ import { TransportadoraAtualizaComponent } from './transportadora-atualiza/trans
 
 const routes: Routes = [
   { path: '', redirectTo: 'transportadora', pathMatch: 'full' },
-  { path: 'transportadaoras', component: TransportadoraListaComponent },
+  { path: 'transportadoras', component: TransportadoraListaComponent },
   { path: 'add', component: TransportadoraCadastroComponent },
   { path: 'update/:id', component: TransportadoraAtualizaComponent },
   { path: 'details/:id', component: TransportadoraDetalhesComponent },
