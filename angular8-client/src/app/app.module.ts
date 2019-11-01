@@ -8,6 +8,9 @@ import { TransportadoraListaComponent } from './transportadora-lista/transportad
 import { TransportadoraCadastroComponent } from './transportadora-cadastro/transportadora-cadastro.component';
 import { TransportadoraAtualizaComponent } from './transportadora-atualiza/transportadora-atualiza.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +21,9 @@ import { TransportadoraAtualizaComponent } from './transportadora-atualiza/trans
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
