@@ -1,0 +1,5 @@
+package com.springboot2.repository;
+
+public class TransportadoraRepository {
+
+}
