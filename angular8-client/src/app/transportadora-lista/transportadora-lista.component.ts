@@ -21,9 +21,11 @@ export class TransportadoraListaComponent implements OnInit {
   }
 
   reloadData() {
+    this.transportadoras = null;
     this.transportadoras = this.transportadoraService.getTransportadoraLista();
   }
-
+ 
+ 
   deleteTransportadora(id: number) {
     this.transportadoraService.deleteTransportadora(id)
       .subscribe(
@@ -37,4 +39,10 @@ export class TransportadoraListaComponent implements OnInit {
   transportadoraDetails(id: number){
     this.router.navigate(['details', id]);
   }
+
+  transportadoraUpdate(id: number){
+    this.router.navigate(['update', id]);
+  }
+
+  
 }

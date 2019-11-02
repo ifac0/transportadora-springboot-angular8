@@ -2,19 +2,53 @@
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="name">Email</label>
+      <label for="name">E-mail:</label>
       <input type="text" class="form-control" id="email" required [(ngModel)]="transportadora.email" name="email">
     </div>
 
     <div class="form-group">
-      <label for="name">Nome</label>
+      <label for="name">Nome: </label>
       <input type="text" class="form-control" id="nome" required [(ngModel)]="transportadora.nome" name="nome">
     </div>
 
     <div class="form-group">
-      <label for="name">Empresa</label>
-      <input type="text" class="form-control" id="empresa" required [(ngModel)]="transportadora.empresa" name="empresa">
+      <label for="name">Empresa:</label>
+      <input type="text" class="form-control" id="empresa" required [(ngModel)]="transportadora.empresa" name="email">
     </div>
+    <div class="form-group">
+      <label for="name">Telefone:</label>
+      <input type="text" class="form-control" id="telefone" required [(ngModel)]="transportadora.telefone" name="telefone">
+    </div>   
+    <div class="form-group">
+      <label for="name">Celular:</label>
+      <input type="text" class="form-control" id="celular" required [(ngModel)]="transportadora.celular" name="celular">
+    </div>
+    <div class="form-group">
+      <label for="name">Modal:</label>
+      <input type="text" class="form-control" id="modal" required [(ngModel)]="transportadora.modal" name="modal">
+    </div>
+    <div class="form-group">
+      <label for="name">Rua / Avenida:</label>
+      <input type="text" class="form-control" id="rua" required [(ngModel)]="transportadora.rua" name="rua">
+    </div>
+    <div class="form-group">
+      <label for="name">Numero:</label>
+      <input type="text" class="form-control" id="numero" required [(ngModel)]="transportadora.numero" name="numero">
+    </div>
+    <div class="form-group">
+      <label for="name">Bairro:</label>
+      <input type="text" class="form-control" id="bairro" required [(ngModel)]="transportadora.bairro" name="bairro">
+    </div>
+    <div class="form-group">
+      <label for="name">Cidade:</label>
+      <input type="text" class="form-control" id="cidade" required [(ngModel)]="transportadora.cidade" name="cidade">
+    </div>
+    <div class="form-group">
+      <label for="name">UF:</label>
+      <input type="text" class="form-control" id="uf" required [(ngModel)]="transportadora.uf" name="uf">
+    </div>    
+    
+    <input type="file" name="file" id="file" (change)="onFileChanged($event)" />
 
     <button type="submit" class="btn btn-success">Submit</button>
   </form>

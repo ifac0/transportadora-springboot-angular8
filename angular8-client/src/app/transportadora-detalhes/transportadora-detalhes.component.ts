@@ -25,7 +25,7 @@ export class TransportadoraDetalhesComponent implements OnInit {
     this.transportadoraService.getTransportadora(this.id)
       .subscribe(data => {
         console.log(data)
-        this.transportadoraService = data;
+        this.transportadora = data;
       }, error => console.log(error));
   }
 

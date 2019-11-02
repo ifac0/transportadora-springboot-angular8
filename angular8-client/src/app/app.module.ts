@@ -11,19 +11,23 @@ import { TransportadoraAtualizaComponent } from './transportadora-atualiza/trans
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+import { PipesModule } from 'w-ng5';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     TransportadoraDetalhesComponent,
     TransportadoraListaComponent,
     TransportadoraCadastroComponent,
-    TransportadoraAtualizaComponent
+    TransportadoraAtualizaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    PipesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,6 +9,10 @@ export class TransportadoraService {
 
   private baseUrl = 'http://localhost:8080/api/v1/transportadoras';
 
+
+  //Para upload da imagem
+  files = [];
+
   constructor(private http: HttpClient) { }
 
   getTransportadora(id: number): Observable<any> {
@@ -30,4 +34,17 @@ export class TransportadoraService {
   getTransportadoraLista(): Observable<any> {
     return this.http.get(`${this.baseUrl}`);
   }
+
+  onFileChanged(event: any) {
+    this.files = event.target.files;
+  }
+  
+  onUpload() {
+    const formData = new FormData();
+    for (const file of this.files) {
+        formData.append(name, file, file.name);
+    }
+    this.http.post('url', formData).subscribe(x => null);
+  }
+
 }
