@@ -1,10 +1,7 @@
-<div class="panel panel-primary">
-    <div class="panel-heading">
-      <h2>Transportadora | </h2>
-    </div>
+<div class="panel panel-primary">  
     <div class="panel-body">
         <nav class="navbar">
-            <input class="form-control" type="text" name="search" [(ngModel)]="filter">  <!-- Input que deve ser adicionado -->
+            <input class="form-control" type="text" name="search" [(ngModel)]="filter">
         </nav>
       <table class="table table-striped">
         <thead>
@@ -13,24 +10,17 @@
             <th>Telefone</th>
             <th>Email</th>
             <th>Celular</th>
-            <th>Ações</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let transportadora of transportadoras | async | filter:[{field:'nome', value: filter}, {field:'email', value: filter},{field:'uf', value: filter},{field:'modal', value: filter}]">
-
+          <tr (click)="transportadoraUpdate(transportadora.id)" *ngFor="let transportadora of transportadoras | async | filter:[{field:'nome', value: filter}, {field:'email', value: filter},{field:'uf', value: filter},{field:'modal', value: filter}]">
             <td>{{transportadora.nome}}</td>
             <td>{{transportadora.telefone}}</td>
             <td>{{transportadora.email}}</td>
-            <td>{{transportadora.celular}}</td>
-            <td>
-                <button (click)="deleteTransportadora(transportadora.id)" class="btn btn-danger">Deletar</button>
-                <button (click)="transportadoraDetails(transportadora.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
-                <button (click)="transportadoraUpdate(transportadora.id)" class="btn btn-info" style="margin-left: 10px">Atualizar</button>
-
-            </td>
+            <td>{{transportadora.celular}}</td>          
           </tr>
         </tbody>
       </table>
+      
     </div>
   </div>

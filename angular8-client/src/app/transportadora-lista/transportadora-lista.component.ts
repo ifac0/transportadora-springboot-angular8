@@ -1,4 +1,3 @@
-import { TransportadoraDetalhesComponent } from '../transportadora-detalhes/transportadora-detalhes.component';
 import { Observable } from "rxjs";
 import { TransportadoraService } from "../transportadora.service";
 import { Transportadora } from "../transportadora";
@@ -25,21 +24,6 @@ export class TransportadoraListaComponent implements OnInit {
     this.transportadoras = this.transportadoraService.getTransportadoraLista();
   }
  
- 
-  deleteTransportadora(id: number) {
-    this.transportadoraService.deleteTransportadora(id)
-      .subscribe(
-        data => {
-          console.log(data);
-          this.reloadData();
-        },
-        error => console.log(error));
-  }
-
-  transportadoraDetails(id: number){
-    this.router.navigate(['details', id]);
-  }
-
   transportadoraUpdate(id: number){
     this.router.navigate(['update', id]);
   }

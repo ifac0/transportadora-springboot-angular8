@@ -1,57 +1,120 @@
-<h3>Cadastro</h3>
+<h3>Cadastrar</h3>
 <div [hidden]="submitted" style="width: 400px;">
-  <form (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="name">E-mail:</label>
-      <input type="text" class="form-control" id="email" required [(ngModel)]="transportadora.email" name="email">
-    </div>
-
-    <div class="form-group">
-      <label for="name">Nome: </label>
-      <input type="text" class="form-control" id="nome" required [(ngModel)]="transportadora.nome" name="nome">
-    </div>
-
-    <div class="form-group">
-      <label for="name">Empresa:</label>
-      <input type="text" class="form-control" id="empresa" required [(ngModel)]="transportadora.empresa" name="email">
-    </div>
-    <div class="form-group">
-      <label for="name">Telefone:</label>
-      <input type="text" class="form-control" id="telefone" required [(ngModel)]="transportadora.telefone" name="telefone">
-    </div>   
-    <div class="form-group">
-      <label for="name">Celular:</label>
-      <input type="text" class="form-control" id="celular" required [(ngModel)]="transportadora.celular" name="celular">
-    </div>
-    <div class="form-group">
-      <label for="name">Modal:</label>
-      <input type="text" class="form-control" id="modal" required [(ngModel)]="transportadora.modal" name="modal">
-    </div>
-    <div class="form-group">
-      <label for="name">Rua:</label>
-      <input type="text" class="form-control" id="rua" required [(ngModel)]="transportadora.rua" name="rua">
-    </div>
-    <div class="form-group">
-      <label for="name">Numero:</label>
-      <input type="text" class="form-control" id="numero" required [(ngModel)]="transportadora.numero" name="numero">
-    </div>
-    <div class="form-group">
-      <label for="name">Bairro:</label>
-      <input type="text" class="form-control" id="bairro" required [(ngModel)]="transportadora.bairro" name="bairro">
-    </div>
-    <div class="form-group">
-      <label for="name">Cidade:</label>
-      <input type="text" class="form-control" id="cidade" required [(ngModel)]="transportadora.cidade" name="cidade">
-    </div>
-    <div class="form-group">
-      <label for="name">UF:</label>
-      <input type="text" class="form-control" id="uf" required [(ngModel)]="transportadora.uf" name="uf">
-    </div>      
-    <input type="file" name="file" id="file" (change)="onFileChanged($event)" />
-    <button type="submit" class="btn btn-success">Submit</button>
-  </form>
-</div>
-
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">E-mail:</label>
+        <input [textMask]="{mask: maskemail}" type="text" class="form-control" id="email" required [(ngModel)]="transportadora.email" name="email" #email="ngModel">
+        <div class="alert alert-danger" *ngIf="transportadora.email?.length < 1" >
+            <div>             
+                O email é obrigatório! 
+            </div>        
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="name">Nome: </label>
+        <input type="text" class="form-control" id="nome" required [(ngModel)]="transportadora.nome" name="nome" #nomes="ngModel">
+        <div class="alert alert-danger" *ngIf="transportadora.nome?.length < 1" >
+            <div>             
+                O nome é obrigatório! 
+            </div>        
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="empresa">Empresa:</label>
+        <input type="text" class="form-control" id="empresa" required [(ngModel)]="transportadora.empresa" name="empresa" #emprsa="ngModel">
+        <div class="alert alert-danger" *ngIf="transportadora.empresa?.length < 4" >
+          <div>           
+              A empresa é obrigatória e deve possuir no minimo 4 caracteres! 
+          </div>        
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name">Telefone:</label>
+        <input [textMask]="{mask: mask8}" type="text" class="form-control" id="telefone" required [(ngModel)]="transportadora.telefone" name="telefone">
+        <div class="alert alert-danger" *ngIf="transportadora.telefone?.length < 1" >
+            <div>             
+              O telefone é obrigatório! 
+            </div> 
+            <div>
+              O telefone precisa possuir no minimo 8 caracteres!! 
+            </div>       
+        </div>
+        
+      </div>   
+      <div class="form-group">
+        <label for="name">Celular:</label>
+        <input [textMask]="{mask: mask9}" type="text" class="form-control" id="celular" [(ngModel)]="transportadora.celular" name="celular">
+      </div>
+      <div class="form-group">
+        <label for="name">Modal:</label>
+        <select type="text" class="form-control" id="modal" required [(ngModel)]="transportadora.modal" name="modal">
+            <option>Ferroviário</option>
+            <option>Rodoviário</option>
+            <option>Hidroviário</option>
+            <option>Dutoviário</option>
+            <option>Aeroviário</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <div class="form-group">
+            <label for="name">Cep:</label>
+            <input type="text" class="form-control" id="uf" required [(ngModel)]="transportadora.cep" name="cep">
+            <div class="alert alert-danger" *ngIf="transportadora.cep?.length < 1" >
+                <div>             
+                    O cep é obrigatório! 
+                </div>        
+            </div>
+            <div class="form-group">
+                <button (click)="buscarCep()" class="btn btn-primary" type="button" id="button-addon2">Buscar</button>
+            </div>
+        </div>      
+        <div>
+            <label for="name">UF:</label>
+            <input type="text" class="form-control" id="uf" required [(ngModel)]="transportadora.uf" name="uf">  
+            <div class="alert alert-danger" *ngIf="transportadora.uf?.length < 1" >
+                <div>             
+                    O UF é obrigatório! 
+                </div>        
+            </div> 
+        </div>      
+       </div>    
+      <div class="form-group">
+        <label for="name">Rua / Avenida:</label>
+        <input type="text" class="form-control" id="rua" required [(ngModel)]="transportadora.rua" name="rua">
+        <div class="alert alert-danger" *ngIf="transportadora.rua?.length < 1" >
+            <div>             
+                A rua é obrigatória! 
+            </div>        
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name">Numero:</label>
+        <input type="text" class="form-control" id="numero" required [(ngModel)]="transportadora.numero" name="numero">
+      </div>
+      <div class="form-group">
+        <label for="name">Bairro:</label>
+        <input type="text" class="form-control" id="bairro" required [(ngModel)]="transportadora.bairro" name="bairro">
+        <div class="alert alert-danger" *ngIf="transportadora.bairro?.length < 1" >
+            <div>             
+                O bairro é obrigatório! 
+            </div>        
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name">Cidade:</label>
+        <input type="text" class="form-control" id="cidade" required [(ngModel)]="transportadora.cidade" name="cidade">
+        <div class="alert alert-danger" *ngIf="transportadora.cidade?.length < 1" >
+            <div>             
+                A cidade é obrigatória! 
+            </div>        
+        </div>
+      </div>
+      
+      <button type="submit" class="btn btn-success">Cadastrar</button>
+    </form>
+  </div>
 <div [hidden]="!submitted">
   <h4>You submitted successfully!</h4>
   <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->

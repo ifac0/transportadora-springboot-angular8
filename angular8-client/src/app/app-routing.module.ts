@@ -1,4 +1,3 @@
-import { TransportadoraDetalhesComponent } from './transportadora-detalhes/transportadora-detalhes.component';
 import { TransportadoraCadastroComponent } from './transportadora-cadastro/transportadora-cadastro.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -10,7 +9,6 @@ const routes: Routes = [
   { path: 'transportadoras', component: TransportadoraListaComponent },
   { path: 'add', component: TransportadoraCadastroComponent },
   { path: 'update/:id', component: TransportadoraAtualizaComponent },
-  { path: 'details/:id', component: TransportadoraDetalhesComponent },
 ];
 
 @NgModule({

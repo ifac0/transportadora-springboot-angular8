@@ -3,12 +3,13 @@ export class Transportadora {
     nome: string;
     empresa: string;    
     email: string;
-    telefone: number;
-    celular: number;
+    telefone: string;
+    celular: string;
     modal: string;
     rua: string;
     numero: number;
     bairro: string;
     cidade: string;
     uf: string;
+    cep: string;
 }
