@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Listener } from 'events';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,18 @@ export class TransportadoraService {
 
   getTransportadora(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`);
+  }
+
+  getBairros(){
+    return this.http.get(`http://localhost:8080/api/v1/bairros`);
+  }
+
+  getLocalizacoes(){
+    return this.http.get(`http://localhost:8080/api/v1/localizacoes`);
+  }
+
+  getModais(){
+    return this.http.get(`http://localhost:8080/api/v1/modais`);
   }
 
   createTransportadora(transportadora: Object): Observable<Object> {

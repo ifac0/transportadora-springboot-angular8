@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TransportadoraListaComponent } from './transportadora-lista/transportadora-lista.component';
 
 @Component({
   selector: 'app-root',

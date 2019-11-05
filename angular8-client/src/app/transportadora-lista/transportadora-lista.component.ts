@@ -3,6 +3,7 @@ import { TransportadoraService } from "../transportadora.service";
 import { Transportadora } from "../transportadora";
 import { Component, OnInit } from "@angular/core";
 import { Router } from '@angular/router';
+import { Listener } from 'selenium-webdriver';
 
 @Component({
   selector: "app-transportadora-lista",
@@ -11,6 +12,11 @@ import { Router } from '@angular/router';
 })
 export class TransportadoraListaComponent implements OnInit {
   transportadoras: Observable<Transportadora[]>;
+  bairros: Observable<Object>;
+  localizacoes: Observable<Object>;
+  modais: Observable<Object>;
+
+
 
   constructor(private transportadoraService: TransportadoraService,
     private router: Router) {}
@@ -21,7 +27,12 @@ export class TransportadoraListaComponent implements OnInit {
 
   reloadData() {
     this.transportadoras = null;
+    this.bairros = this.transportadoraService.getBairros();
     this.transportadoras = this.transportadoraService.getTransportadoraLista();
+    this.localizacoes = this.transportadoraService.getLocalizacoes();
+    this.modais = this.transportadoraService.getModais();
+
+
   }
  
   transportadoraUpdate(id: number){

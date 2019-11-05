@@ -16,6 +16,10 @@ export class TransportadoraAtualizaComponent implements OnInit {
 
   id: number;
   transportadora: Transportadora;
+  testeemail = false;
+  testeempresa = false;
+  usuario_validador = '';
+  dominio_validador = '';
   public mask9 = ['(', /[1-9]/, /\d/,')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
   public mask8 = ['(', /[1-9]/, /\d/,')', ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
   public maskemail = emailMask 
@@ -26,6 +30,8 @@ export class TransportadoraAtualizaComponent implements OnInit {
 
   ngOnInit() {
     this.transportadora = new Transportadora();
+    this.testeemail = true;
+    this.testeempresa = false;
 
     this.id = this.route.snapshot.params['id'];
     
@@ -68,8 +74,39 @@ export class TransportadoraAtualizaComponent implements OnInit {
   }
 
   onSubmit() {
-    this.updateTransportadora();    
-  }
+      this.validacaoEmail(this.transportadora.email);
+      if(this.testeemail==true && this.transportadora.empresa.length>4 ){
+        this.testeempresa = false;
+        this.testeemail = false;
+
+        this.updateTransportadora();  
+       }else{        
+        if(this.transportadora.empresa.length<4){
+          this.testeempresa = true;  
+        }else{
+          this.testeempresa = false;  
+        }
+      }  
+    }
+  
+    validacaoEmail(field) {
+      this.usuario_validador = field.substring(0, field.indexOf("@"));
+      this.dominio_validador = field.substring(field.indexOf("@")+ 1, field.length);
+       
+      if ((this.usuario_validador.length >=1) &&
+          (this.dominio_validador.length >=3) && 
+          (this.usuario_validador.search("@")==-1) && 
+          (this.dominio_validador.search("@")==-1) &&
+          (this.usuario_validador.search(" ")==-1) && 
+          (this.dominio_validador.search(" ")==-1) &&
+          (this.dominio_validador.search(".")!=-1) &&      
+          (this.dominio_validador.indexOf(".") >=1)&& 
+          (this.dominio_validador.lastIndexOf(".") < this.dominio_validador.length - 1)) {
+            this.testeemail=true;
+          }else{
+            this.testeemail=false;
+          }
+      }
 
   gotoList() {
     this.router.navigate(['/transportadoras']);

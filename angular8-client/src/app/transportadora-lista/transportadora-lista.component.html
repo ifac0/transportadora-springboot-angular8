@@ -1,26 +1,95 @@
-<div class="panel panel-primary">  
-    <div class="panel-body">
-        <nav class="navbar">
-            <input class="form-control" type="text" name="search" [(ngModel)]="filter">
-        </nav>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Telefone</th>
-            <th>Email</th>
-            <th>Celular</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr (click)="transportadoraUpdate(transportadora.id)" *ngFor="let transportadora of transportadoras | async | filter:[{field:'nome', value: filter}, {field:'email', value: filter},{field:'uf', value: filter},{field:'modal', value: filter}]">
-            <td>{{transportadora.nome}}</td>
-            <td>{{transportadora.telefone}}</td>
-            <td>{{transportadora.email}}</td>
-            <td>{{transportadora.celular}}</td>          
-          </tr>
-        </tbody>
-      </table>
-      
+<div class="container">
+
+    <div class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+        <div class="input-group">
+            <input type="text" name="search" [(ngModel)]="filter" placeholder="Pesquise aqui..." class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                    <i class="fas fa-search fa-sm"></i>
+                </button>
+            </div>
+        </div>
     </div>
-  </div>
+
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Nova Row-->
+    <div class="row" (click)="transportadoraUpdate(transportadora.id)" *ngFor="let transportadora of transportadoras | async | filter:[{field:'nome', value: filter}, {field:'email', value: filter},{field:'uf', value: filter},{field:'modal', value: filter}]">
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-12 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+
+                        <div class="col mr-3">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+
+                        <div class="col mr-3">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> {{transportadora.nome}}</div>
+                            <div class="h6 mb-0 font-weight-bold text-gray-800">44.056.755/0002-83</div>
+                        </div>
+                        <div class="col mr-3">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> {{transportadora.telefone}} </div>
+                            <div class="h6 mb-0 font-weight-bold text-gray-800">{{transportadora.email}}</div>
+                        </div>
+                        <div class="col mr-3">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> Fale Agora: {{transportadora.celular}}</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+    <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> Lista de Bairros </div>
+                    <hr class="sidebar-divider">
+
+                    <div class="row"  *ngFor="let bairro of bairros | async">
+                            <div class="h6 mb-0 font-weight-bold text-gray-800"> {{bairro[0]}} ({{bairro[1]}})</div>
+                            <hr class="sidebar-divider d-none d-md-block">
+
+                    </div>                    
+                </div>
+            </div>
+    </div>
+    <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> Lista de Localização (Municípios) </div>
+                    <hr class="sidebar-divider">
+
+                    <div class="row"  *ngFor="let local of localizacoes | async">
+                            <div class="h6 mb-0 font-weight-bold text-gray-800"> {{local[0]}} ({{local[1]}})</div>
+                            <hr class="sidebar-divider d-none d-md-block">
+                    
+                    </div>               
+                </div>
+            </div>
+    </div>
+    <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> Lista de Modal </div>
+                    <hr class="sidebar-divider">
+
+                    <div class="row"  *ngFor="let modal of modais | async">
+                            <div class="h6 mb-0 font-weight-bold text-gray-800"> {{modal[0]}} ({{modal[1]}})</div>
+                            <hr class="sidebar-divider d-none d-md-block">
+                    
+                    </div>                 
+                </div>
+            </div>
+    </div>
+    </div>
+
+
+    <!-- Fim Nova Row-->
+</div>
+
