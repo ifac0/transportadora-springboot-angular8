@@ -1,8 +1,8 @@
 # Portfólio de Transportadoras
-Neste projeto será desenvolvido um pequeno sistema para que transportadoras possam se
+Neste projeto foi desenvolvido um pequeno sistema para que transportadoras possam se
 cadastrar para que a mesma possa aparecer na listagem principal do sistema, onde aparece
-todas as transportadoras cadastradas, e elas podem ser filtradas, caso clique no nome da
-transportadora, pode alterar os seus dados e também deletar a transportadora.
+todas as transportadoras cadastradas, e elas é filtradas, caso clique no nome da
+transportadora, vai poder alterar os seus dados e também deletar a transportadora.
 
 ## Tecnologias Usadas
 >  * Java 8
@@ -21,5 +21,5 @@ transportadora, pode alterar os seus dados e também deletar a transportadora.
 > * Validação do campo nome e email
 > * Utilização de API externa para buscar campos de endereço
 > * Listar as Transportadoras cadastradas
-> * Listando as Localizadades/Municipios/Modais
-> * Filtro
+> * Listar e Calcular as Localizadades/Municipios/Modais
+> * Filtrar
