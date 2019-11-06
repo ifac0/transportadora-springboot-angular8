@@ -22,7 +22,7 @@ import com.springboot2.exception.ResourceNotFoundException;
 import com.springboot2.model.Transportadora;
 import com.springboot2.repository.TransportadoraRepository;
 
-@RestController @CrossOrigin(origins = "http://localhost:8080")
+@RestController @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/v1")
 public class TransportadoraController {
 	
@@ -42,6 +42,24 @@ public class TransportadoraController {
 		return ResponseEntity.ok().body(transportadora);
 	}
 	
+	@GetMapping("/bairros")
+	public ResponseEntity<List<Object[]>> getBairros(){
+		List<Object[]> transportadora = transportadoraRepository.findAllBairros();
+		return ResponseEntity.ok().body(transportadora);
+	}
+	
+	@GetMapping("/localizacoes")
+	public ResponseEntity<List<Object[]>> getLocalizacao(){
+		List<Object[]> transportadora = transportadoraRepository.findAllLocalizacao();
+		return ResponseEntity.ok().body(transportadora);
+	}
+	
+	@GetMapping("/modais")
+	public ResponseEntity<List<Object[]>> getModal(){
+		List<Object[]> transportadora = transportadoraRepository.findAllLModal();
+		return ResponseEntity.ok().body(transportadora);
+	}
+	
 	@PostMapping("/transportadoras")
 	public Transportadora createTransportadora (@Valid @RequestBody Transportadora transportadora) {
 		return transportadoraRepository.save(transportadora);
@@ -53,29 +71,15 @@ public class TransportadoraController {
         Transportadora transportadora = transportadoraRepository.findById(transportadoraId)
         .orElseThrow(() -> new ResourceNotFoundException("Transportadora não encontrada, id :: " + transportadoraId));
 
-        transportadora.setEmail(transportadoraDetalhes.getEmail());
-        transportadora.setNome(transportadoraDetalhes.getNome());
-        transportadora.setEmpresa(transportadoraDetalhes.getEmpresa());
-        transportadora.setTelefone(transportadoraDetalhes.getTelefone());
-        transportadora.setCelular(transportadoraDetalhes.getCelular());
-        transportadora.setModal(transportadoraDetalhes.getModal());
-        transportadora.setRua(transportadoraDetalhes.getRua());
-        transportadora.setNumero(transportadoraDetalhes.getNumero());
-        transportadora.setBairro(transportadoraDetalhes.getBairro());
-        transportadora.setCidade(transportadoraDetalhes.getCidade());
-        transportadora.setUf(transportadoraDetalhes.getUf());
-               
-        final Transportadora updatedTransportadora = transportadoraRepository.save(transportadora);
+        final Transportadora updatedTransportadora = transportadoraRepository.save(transportadoraDetalhes);
         return ResponseEntity.ok(updatedTransportadora);
     }
 	
 	@DeleteMapping("/transportadoras/{id}")
     public Map<String, Boolean> deleteTransportadora(@PathVariable(value = "id") Long transportadoraId)
          throws ResourceNotFoundException {
-        Transportadora transportadora = transportadoraRepository.findById(transportadoraId)
-        		.orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + transportadoraId));
-
-        transportadoraRepository.delete(transportadora);
+		
+        transportadoraRepository.deleteById(transportadoraId);
         Map<String, Boolean> response = new HashMap<>();
         response.put("deleted", Boolean.TRUE);
         return response;

@@ -6,23 +6,26 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.Valid;
 
 @Entity
 @Table(name = "transportadora")
 public class Transportadora {
-
+	 	
 	 private long id;
+	 
 	 private String nome;
 	 private String email;
 	 private String empresa;
-	 private int telefone;
-	 private int celular;
+	 private String telefone;
+	 private String celular;
 	 private String modal;
 	 private String rua;
 	 private int numero;
 	 private String bairro;
 	 private String cidade;
 	 private String uf;
+	 private String cep;
 	 
 	 public Transportadora() {
 		 
@@ -32,14 +35,15 @@ public class Transportadora {
 			 String nome,     
 			 String email,    
 			 String empresa,  
-			 int telefone,  
-			 int celular,    
+			 String telefone,  
+			 String celular,    
 			 String modal,    
 			 String rua,    
 			 int numero,      
 			 String bairro,   
 			 String cidade,   
-			 String uf) {
+			 String uf,
+			 String cep) {
 		 
 		 this.nome = nome;
 		 this.email = email;
@@ -52,6 +56,7 @@ public class Transportadora {
 		 this.bairro = bairro;
 		 this.cidade = cidade;
 		 this.uf = uf;
+		 this.cep = cep;
 		 
 		 
 	 }
@@ -66,7 +71,7 @@ public class Transportadora {
 		this.id = id;
 	}
 	
-	@Column(name = "nome", nullable = false)
+	@Column(name = "nome")
 	public String getNome() {
 		return nome;
 	}
@@ -93,25 +98,25 @@ public class Transportadora {
 		this.empresa = empresa;
 	}
 	
-	@Column(name = "telefone", nullable = false)
-	public int getTelefone() {
+	@Column(name = "telefone")
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(int telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 
-	@Column(name = "celular", nullable = false)
-	public int getCelular() {
+	@Column(name = "celular")
+	public String getCelular() {
 		return celular;
 	}
 
-	public void setCelular(int celular) {
+	public void setCelular(String celular) {
 		this.celular = celular;
 	}
 
-	@Column(name = "modal", nullable = false)
+	@Column(name = "modal")
 	public String getModal() {
 		return modal;
 	}
@@ -120,7 +125,7 @@ public class Transportadora {
 		this.modal = modal;
 	}
 
-	@Column(name = "rua", nullable = false)
+	@Column(name = "rua")
 	public String getRua() {
 		return rua;
 	}
@@ -129,7 +134,7 @@ public class Transportadora {
 		this.rua = rua;
 	}
 
-	@Column(name = "numero", nullable = false)
+	@Column(name = "numero")
 	public int getNumero() {
 		return numero;
 	}
@@ -138,7 +143,8 @@ public class Transportadora {
 		this.numero = numero;
 	}
 
-	@Column(name = "bairro", nullable = false)
+	@Column(name = "bairro")
+	
 	public String getBairro() {
 		return bairro;
 	}
@@ -147,7 +153,7 @@ public class Transportadora {
 		this.bairro = bairro;
 	}
 
-	@Column(name = "cidade", nullable = false)
+	@Column(name = "cidade")
 	public String getCidade() {
 		return cidade;
 	}
@@ -156,13 +162,22 @@ public class Transportadora {
 		this.cidade = cidade;
 	}
 
-	@Column(name = "uf", nullable = false)
+	@Column(name = "uf")
 	public String getUf() {
 		return uf;
 	}
 
 	public void setUf(String uf) {
 		this.uf = uf;
+	}
+	
+	@Column(name = "cep")
+	public String getCep() {
+		return cep;
+	}
+
+	public void setCep(String cep) {
+		this.cep = cep;
 	}
 	
 	@Override
